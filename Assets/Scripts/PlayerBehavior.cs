@@ -6,6 +6,8 @@ public class PlayerBehavior : MonoBehaviour {
 
    public GameObject player;
 
+    public int speed = 100;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -15,6 +17,6 @@ public class PlayerBehavior : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        player.transform.Translate(Vector2.up);
+        player.transform.Translate(Vector2.up * Time.deltaTime*20);
 	}
 }
