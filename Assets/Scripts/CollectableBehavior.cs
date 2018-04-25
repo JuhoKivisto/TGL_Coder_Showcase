@@ -8,9 +8,11 @@ public class CollectableBehavior : MonoBehaviour {
 
     public GameObject block;
 
+    PlayerBehavior playerBeh;
+
 	// Use this for initialization
 	void Start () {
-		
+        playerBeh = gameObject.AddComponent<PlayerBehavior>();
 	}
 	
 	// Update is called once per frame
@@ -23,6 +25,8 @@ public class CollectableBehavior : MonoBehaviour {
 
         FindObjectOfType<AudioManager>().Play("som");
         Destroy(block);
+        playerBeh.Energy++;
+
        
     }
 }

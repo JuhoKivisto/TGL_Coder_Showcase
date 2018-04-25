@@ -12,6 +12,8 @@ public class PlayerBehavior : MonoBehaviour, IPointerDownHandler, IPointerUpHand
 
     public GameObject camera;
 
+    public Text energyNum;
+
     float directionsX;
 
     Rigidbody2D rb2D;
@@ -22,18 +24,32 @@ public class PlayerBehavior : MonoBehaviour, IPointerDownHandler, IPointerUpHand
 
     bool pointerDown;
 
-    float pointerDownTimer = 0.0f;
+    private static int energy;
 
-    public UnityEvent ButtonHold;
+    public int Energy {
+        get {
+            return energy;
+        }
+
+        set {
+            energy = value;
+        }
+    }
+
+    int maxEnergy = 5;
+
+    public Slider EnergyBar;
 
     // Use this for initialization
     void Start() {
-
+        energy = 0;
         rb2D = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update() {
+
+        energyNum.text = energy.ToString();
 
         directionsX = CrossPlatformInputManager.GetAxis("Horizontal");
         rb2D.velocity = new Vector2(directionsX * 100, 0);
@@ -49,6 +65,10 @@ public class PlayerBehavior : MonoBehaviour, IPointerDownHandler, IPointerUpHand
         camera.transform.Translate(0, 0.1f * Time.deltaTime * speed / 1.3f, 0);
 
         // Debug.Log(speed);
+
+        if (energy > maxEnergy) {
+            energy /= 2;
+        }
     }
 
     public void GoLeft() {
