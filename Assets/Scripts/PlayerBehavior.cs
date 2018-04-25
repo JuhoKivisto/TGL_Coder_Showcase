@@ -40,7 +40,7 @@ public class PlayerBehavior : MonoBehaviour, IPointerDownHandler,IPointerUpHandl
         speed += 0.01f;
         }
         player.transform.Translate(0,0.1f*Time.deltaTime*speed,0);
-        Debug.Log(speed);
+       // Debug.Log(speed);
 	}
 
    public void GoLeft()

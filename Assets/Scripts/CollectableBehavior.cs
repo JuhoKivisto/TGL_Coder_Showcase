@@ -21,7 +21,8 @@ public class CollectableBehavior : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D other)
     {
 
-
+        FindObjectOfType<AudioManager>().Play("som");
+        Destroy(block);
        
     }
 }
