@@ -4,12 +4,17 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using UnityStandardAssets.CrossPlatformInput;
 
-public class PlayerBehavior : MonoBehaviour, IPointerDownHandler,IPointerUpHandler {
+public class PlayerBehavior : MonoBehaviour, IPointerDownHandler, IPointerUpHandler {
 
-   public GameObject player;
+    public GameObject player;
 
-    public Button lButton;
+    public GameObject camera;
+
+    float directionsX;
+
+    Rigidbody2D rb2D;
 
     public float speed = 0;
 
@@ -21,48 +26,47 @@ public class PlayerBehavior : MonoBehaviour, IPointerDownHandler,IPointerUpHandl
 
     public UnityEvent ButtonHold;
 
-	// Use this for initialization
-	void Start () {
-		
+    // Use this for initialization
+    void Start() {
 
-	}
-	
-	// Update is called once per frame
-	void Update () {
-
-        
-
-        if (counter == 10){
-            
-        }
-        else{
-
-        speed += 0.01f;
-        }
-        player.transform.Translate(0,0.1f*Time.deltaTime*speed,0);
-       // Debug.Log(speed);
-	}
-
-   public void GoLeft()
-    {
-
-        player.transform.Translate(Vector2.left*Time.deltaTime*10);
+        rb2D = GetComponent<Rigidbody2D>();
     }
 
-   public void GoRight()
-    {
+    // Update is called once per frame
+    void Update() {
+
+        directionsX = CrossPlatformInputManager.GetAxis("Horizontal");
+        rb2D.velocity = new Vector2(directionsX * 100, 0);
+
+        if (counter == 10) {
+
+        }
+        else {
+
+            speed += 0.01f;
+        }
+        player.transform.Translate(0, 0.1f * Time.deltaTime * speed, 0);
+        camera.transform.Translate(0, 0.1f * Time.deltaTime * speed / 1.3f, 0);
+
+        // Debug.Log(speed);
+    }
+
+    public void GoLeft() {
+
+        player.transform.Translate(Vector2.left * Time.deltaTime * 10);
+    }
+
+    public void GoRight() {
         player.transform.Translate(Vector2.right * Time.deltaTime);
 
     }
 
-    public void OnPointerDown(PointerEventData eventData)
-    {
+    public void OnPointerDown(PointerEventData eventData) {
         pointerDown = true;
-        
+
     }
 
-    public void OnPointerUp(PointerEventData eventData)
-    {
+    public void OnPointerUp(PointerEventData eventData) {
         pointerDown = false;
     }
 }

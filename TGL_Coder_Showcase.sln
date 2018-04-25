@@ -3,6 +3,10 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TGL_Coder_Showcase", "TGL_Coder_Showcase.csproj", "{BFC73CCA-2F72-8B90-611E-4A4FF9B30754}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TGL_Coder_Showcase.Plugins", "TGL_Coder_Showcase.Plugins.csproj", "{9EAA95FF-CE0B-5A41-995C-BE7B11C98A84}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TGL_Coder_Showcase.Editor.Plugins", "TGL_Coder_Showcase.Editor.Plugins.csproj", "{2549FF10-B882-C288-97B9-C8401406AE36}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +17,14 @@ Global
 		{BFC73CCA-2F72-8B90-611E-4A4FF9B30754}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BFC73CCA-2F72-8B90-611E-4A4FF9B30754}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BFC73CCA-2F72-8B90-611E-4A4FF9B30754}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9EAA95FF-CE0B-5A41-995C-BE7B11C98A84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9EAA95FF-CE0B-5A41-995C-BE7B11C98A84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9EAA95FF-CE0B-5A41-995C-BE7B11C98A84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9EAA95FF-CE0B-5A41-995C-BE7B11C98A84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2549FF10-B882-C288-97B9-C8401406AE36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2549FF10-B882-C288-97B9-C8401406AE36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2549FF10-B882-C288-97B9-C8401406AE36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2549FF10-B882-C288-97B9-C8401406AE36}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
