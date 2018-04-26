@@ -38,36 +38,46 @@ public class PlayerBehavior : MonoBehaviour, IPointerDownHandler, IPointerUpHand
 
     int maxEnergy = 5;
 
-    public Slider EnergyBar;
+    public Slider energyBar;
+
+    public Button backdoorBtn;
 
     // Use this for initialization
     void Start() {
         energy = 0;
         rb2D = GetComponent<Rigidbody2D>();
+        energyBar.value = energy;
     }
 
     // Update is called once per frame
     void Update() {
 
-        energyNum.text = energy.ToString();
+
+        //energyNum.text = energy.ToString();
+        energyBar.value = energy;
 
         directionsX = CrossPlatformInputManager.GetAxis("Horizontal");
         rb2D.velocity = new Vector2(directionsX * 100, 0);
 
-        if (counter == 10) {
 
-        }
-        else {
 
-            speed += 0.01f;
-        }
-        player.transform.Translate(0, 0.1f * Time.deltaTime * speed, 0);
-        camera.transform.Translate(0, 0.1f * Time.deltaTime * speed / 1.3f, 0);
+        speed += 0.01f;
+
+        player.transform.Translate(0, 0.1f * Time.deltaTime * speed, 0);    // Moving player
+        camera.transform.Translate(0, 0.1f * Time.deltaTime * speed / 1.3f, 0); //Moving camera
 
         // Debug.Log(speed);
 
+        // Energy logic
         if (energy > maxEnergy) {
             energy /= 2;
+            backdoorBtn.interactable = false;
+            backdoorBtn.GetComponentInChildren<Text>().text = "Not enough energy";
+
+        }
+        if (energy == maxEnergy) {
+            backdoorBtn.interactable = true;
+            backdoorBtn.GetComponentInChildren<Text>().text = "Open Backdoor";
         }
     }
 
