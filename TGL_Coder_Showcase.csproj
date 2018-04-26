@@ -242,6 +242,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\AudioManager.cs" />
+    <Compile Include="Assets\Scripts\BackdoorBehavior.cs" />
     <Compile Include="Assets\Scripts\CollectableBehavior.cs" />
     <Compile Include="Assets\Scripts\MenuScript.cs" />
     <Compile Include="Assets\Scripts\PlayerBehavior.cs" />

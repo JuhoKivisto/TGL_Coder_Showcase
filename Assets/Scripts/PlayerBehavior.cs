@@ -36,6 +36,16 @@ public class PlayerBehavior : MonoBehaviour, IPointerDownHandler, IPointerUpHand
         }
     }
 
+    public int MaxEnergy {
+        get {
+            return maxEnergy;
+        }
+
+        set {
+            maxEnergy = value;
+        }
+    }
+
     int maxEnergy = 5;
 
     public Slider energyBar;
@@ -69,13 +79,13 @@ public class PlayerBehavior : MonoBehaviour, IPointerDownHandler, IPointerUpHand
         // Debug.Log(speed);
 
         // Energy logic
-        if (energy > maxEnergy) {
+        if (energy > MaxEnergy) {
             energy /= 2;
             backdoorBtn.interactable = false;
             backdoorBtn.GetComponentInChildren<Text>().text = "Not enough energy";
 
         }
-        if (energy == maxEnergy) {
+        if (energy == MaxEnergy) {
             backdoorBtn.interactable = true;
             backdoorBtn.GetComponentInChildren<Text>().text = "Open Backdoor";
         }
