@@ -12,18 +12,21 @@ public class PlayerBehavior : MonoBehaviour, IPointerDownHandler, IPointerUpHand
 
     public GameObject camera;
 
+    public GameObject backdoor;
+
     public Text energyNum;
 
     float directionsX;
 
     Rigidbody2D rb2D;
 
-    public float speed = 0;
+    private float speed = 10;
 
     int counter = 0;
 
     bool pointerDown;
 
+    //  Players energy
     private static int energy;
 
     public int Energy {
@@ -36,7 +39,8 @@ public class PlayerBehavior : MonoBehaviour, IPointerDownHandler, IPointerUpHand
         }
     }
 
-    public int MaxEnergy {
+    //  Maxium energy needed to open back door
+    public float MaxEnergy {
         get {
             return maxEnergy;
         }
@@ -46,7 +50,17 @@ public class PlayerBehavior : MonoBehaviour, IPointerDownHandler, IPointerUpHand
         }
     }
 
-    int maxEnergy = 5;
+    public float Speed {
+        get {
+            return speed;
+        }
+
+        set {
+            speed = value;
+        }
+    }
+
+    float maxEnergy = 5;
 
     public Slider energyBar;
 
@@ -62,8 +76,8 @@ public class PlayerBehavior : MonoBehaviour, IPointerDownHandler, IPointerUpHand
     // Update is called once per frame
     void Update() {
 
-
-        //energyNum.text = energy.ToString();
+         energyBar.maxValue = maxEnergy;
+         energyNum.text = maxEnergy.ToString();
         energyBar.value = energy;
 
         directionsX = CrossPlatformInputManager.GetAxis("Horizontal");
@@ -71,10 +85,10 @@ public class PlayerBehavior : MonoBehaviour, IPointerDownHandler, IPointerUpHand
 
 
 
-        speed += 0.01f;
+        Speed += 0.01f;
 
-        player.transform.Translate(0, 0.1f * Time.deltaTime * speed, 0);    // Moving player
-        camera.transform.Translate(0, 0.1f * Time.deltaTime * speed / 1.3f, 0); //Moving camera
+        player.transform.Translate(0, 0.1f * Time.deltaTime * Speed, 0);    // Moving player
+        camera.transform.Translate(0, 0.1f * Time.deltaTime * Speed / 1.3f, 0); //Moving camera
 
         // Debug.Log(speed);
 
@@ -86,8 +100,14 @@ public class PlayerBehavior : MonoBehaviour, IPointerDownHandler, IPointerUpHand
 
         }
         if (energy == MaxEnergy) {
-            backdoorBtn.interactable = true;
+            
+          
             backdoorBtn.GetComponentInChildren<Text>().text = "Open Backdoor";
+        }
+        else {
+            backdoorBtn.interactable = false;
+            backdoorBtn.GetComponentInChildren<Text>().text = "Not enough energy";
+
         }
     }
 
@@ -109,4 +129,6 @@ public class PlayerBehavior : MonoBehaviour, IPointerDownHandler, IPointerUpHand
     public void OnPointerUp(PointerEventData eventData) {
         pointerDown = false;
     }
+
+    
 }

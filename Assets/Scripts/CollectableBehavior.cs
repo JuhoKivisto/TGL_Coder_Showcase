@@ -10,23 +10,25 @@ public class CollectableBehavior : MonoBehaviour {
 
     PlayerBehavior playerBeh;
 
-	// Use this for initialization
-	void Start () {
-        playerBeh = gameObject.AddComponent<PlayerBehavior>();
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    // Use this for initialization
+    void Start() {
+        playerBeh = player.GetComponent<PlayerBehavior>();
+    }
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
+    // Update is called once per frame
+    void Update() {
+
+    }
+
+    private void OnTriggerEnter2D(Collider2D other) {
 
         FindObjectOfType<AudioManager>().Play("som");
-        Destroy(block);
         playerBeh.Energy++;
+        playerBeh.Speed += 5;
+        Destroy(block);
 
-       
+
+
+
     }
 }
