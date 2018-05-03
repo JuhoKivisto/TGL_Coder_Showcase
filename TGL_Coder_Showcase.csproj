@@ -244,10 +244,13 @@
     <Compile Include="Assets\Scripts\AudioManager.cs" />
     <Compile Include="Assets\Scripts\BackdoorBehavior.cs" />
     <Compile Include="Assets\Scripts\CollectableBehavior.cs" />
+    <Compile Include="Assets\Scripts\GameOverBehavior.cs" />
+    <Compile Include="Assets\Scripts\MainFrameBehavior.cs" />
     <Compile Include="Assets\Scripts\MenuScript.cs" />
     <Compile Include="Assets\Scripts\PlayerBehavior.cs" />
     <Compile Include="Assets\Scripts\Sound.cs" />
     <Compile Include="Assets\Scripts\WallBehavior.cs" />
+    <Compile Include="Assets\Scripts\WinScreenBehavior.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />

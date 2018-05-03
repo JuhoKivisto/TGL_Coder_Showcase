@@ -1,9 +1,11 @@
 Android
 PlayerPath?
-C:/Users/tgl/Documents/JKE/TGL_Coder_Showcase/test.apk
+C:/Users/tgl/Documents/TGL_Coder_Showcase/test2.apk
 SceneListBegin?
 Assets/_Scenes/Menu.unity
 Assets/_Scenes/Game.unity
+Assets/_Scenes/GameOver.unity
+Assets/_Scenes/WinScreen.unity
 SceneListEnd?
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
 4b12dd839b2293f8457cd67cc3610b85 UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationTrack
@@ -121,8 +123,10 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.Spa
 78ebae5ed9b3edeb216da437b99754a4 Assembly-CSharp-firstpass.dll:UnityStandardAssets.CrossPlatformInput.Joystick
 a2efb0db652b8114d1ae7dd9a600d626 Assembly-CSharp-firstpass.dll:UnityStandardAssets.CrossPlatformInput.InputAxisScrollbar
 fe76270bd84ec3b6f2f6f92c69cf69da Assembly-CSharp-firstpass.dll:UnityStandardAssets.CrossPlatformInput.AxisTouchButton
+0ecab75231fd89eb7f92af7ce63c555b Assembly-CSharp.dll:.BackdoorBehavior
 a7d3c6c6948d99dd4116e659ddcf5ac4 Assembly-CSharp-firstpass.dll:UnityStandardAssets.CrossPlatformInput.ButtonHandler
 e5707be0809fcb8edf70e62267533ac3 Assembly-CSharp.dll:.CollectableBehavior
+2b5bd81c259c691324a17af9a3e97e85 Assembly-CSharp.dll:.WallBehavior
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Advertisements.dll:UnityEngine.Advertisements.CallbackExecutor
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Advertisements.dll:UnityEngine.Advertisements.Editor.Placeholder
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp-firstpass.dll:UnityStandardAssets.CrossPlatformInput.MobileControlRig
@@ -158,4 +162,7 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.Spa
 45f3431f0103c41611e8d4eec3d439df UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingRenderer
 9de3a22eca9aefadba2d10d5987cefe3 UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
 a8796ecdc9d5c260bbe32f30c4b10708 Assembly-CSharp-firstpass.dll:UnityStandardAssets.CrossPlatformInput.TouchPad
-559fe52c5dfd2f9c63d48f5840bb9dfb Assembly-CSharp.dll:.PlayerBehavior
+9bc09348e0d10a917d21ab378940c8ed Assembly-CSharp.dll:.PlayerBehavior
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.MainFrameBehavior
+15ce842363a2399233da4ea1d623e213 Assembly-CSharp.dll:.WinScreenBehavior
+15ce842363a2399233da4ea1d623e213 Assembly-CSharp.dll:.GameOverBehavior
