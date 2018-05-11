@@ -10,12 +10,12 @@ public class WinScreenBehavior : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        exitButton.onClick.AddListener(ExitToMain);
 		
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        exitButton.onClick.AddListener(ExitToMain);
 	}
 
     void ExitToMain() {

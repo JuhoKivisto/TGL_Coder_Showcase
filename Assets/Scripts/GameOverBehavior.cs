@@ -8,15 +8,15 @@ public class GameOverBehavior : MonoBehaviour {
 
     // Use this for initialization
     void Start() {
-
-    }
-
-    // Update is called once per frame
-    void Update() {
         exitButton.onClick.AddListener(ExitToMain);
     }
-
-    void ExitToMain() {
+    
+    // Update is called once per frame
+    void Update() {
+        
+    }
+    
+    public void ExitToMain() {
         UnityEngine.SceneManagement.SceneManager.LoadScene("Menu");
     }
 
